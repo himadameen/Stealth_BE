@@ -34,7 +34,7 @@ app.get('/delete_cookie', (req, res) => {
 })
 
 
-app.get('/setcookie', (req, res) => {
+app.get('/set_cookie', (req, res) => {
     res.cookie(`Cookie token name`, `encrypted cookie value`);
     res.send("cookies have been successful");
     console.log("got a cookies");
@@ -45,4 +45,4 @@ app.use('/movie', movieRoute);
 
 mongoose.connect('mongodb+srv://Ameen:Hameen99@cluster0.dlzjf.mongodb.net/?retryWrites=true&w=majority')
 
-app.listen(process.env.APP_PORT);
+app.listen(process.env.APP_PORT || APP_PORT);
